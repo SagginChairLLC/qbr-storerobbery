@@ -108,12 +108,12 @@ end)
 --if fail
 RegisterNUICallback('fail', function(_ ,cb)
     if usingAdvanced then
-        if math.random(1, 100) < 20 then
+        if math.random(1, 100) < Config.AdvLockpickBreak  then
             TriggerServerEvent('QBCore:Server:RemoveItem', "advancedlockpick", 1)
             TriggerEvent("inventory:client:ItemBox", sharedItems["advancedlockpick"], "remove")
         end
     else
-        if math.random(1, 100) < 40 then
+        if math.random(1, 100) < Config.LockpickBreak then
             TriggerServerEvent('QBCore:Server:RemoveItem', "lockpick", 1)
             TriggerEvent("inventory:client:ItemBox", sharedItems["lockpick"], "remove")
         end
