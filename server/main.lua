@@ -4,10 +4,14 @@ RegisterServerEvent('qbr-storerobbery:server:takeMoney')
 AddEventHandler('qbr-storerobbery:server:takeMoney', function()
     local src = source
     local Player = exports['qbr-core']:GetPlayer(src)
+
+    if Config.RewardType == true then
     Player.Functions.AddItem(Config.RewardItem, Config.RewardAmount)
     TriggerClientEvent('inventory:client:ItemBox', src, sharedItems[Config.RewardItem], "add")
+    else
+    Player.Functions.AddMoney(Config.CurrencyType, Config.CurrencyAmount)
+    end
 end)
-
 
 RegisterNetEvent('qbr-storerobbery:server:setRegisterStatus', function(register)
     Config.Registers[register].robbed = true
