@@ -1,8 +1,16 @@
 Config = {}
 
 --Rewards
-Config.RewardItem = "cash" -- Make sure item is in the qbr-core/shared/items
+Config.RewardType = false -- If true you recieve an item if false you will recieve currency(Like cash,bank or any other currencys)
+
+Config.RewardItem = "apple" -- Make sure item is in the qbr-core/shared/items
 Config.RewardAmount = 25 --Randomize by using  -  math.random(10, 25)
+
+Config.CurrencyType = 'cash' -- Currency type cash,bank ect
+Config.CurrencyAmount = 50 -- Currency amount
+
+Config.LockpickBreak = 40 -- Lower the smaller chance of breaking (Currently 40%)
+Config.AdvLockpickBreak = 5 -- Lower the smaller chance of breaking (Currently 5%)
 
 Config.resetTime = (60 * 1000) * 30 -- Every 30 minutes the store can be robbed again
 Config.tickInterval = 1000 -- Ignore
